@@ -1,0 +1,48 @@
+#score {
+text-align: center ;
+}
+
+#game {
+    width: 600px;
+    height: 300px;
+    border: 2px solid black;
+    margin: auto;
+    background-image: url("https://thumbs.dreamstime.com/b/landscape-game-background-game-black-white-background-vector-illustration-you-project-87964651.jpg");
+    background-size: cover;
+}
+
+#dino {
+    height: 75px;
+    width: 75px;
+    position: relative;
+    top: 225px;
+    background-image: url(../th-removebg-preview.png);
+    background-size: cover;
+}
+
+#rock {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 175px;
+    left: 550px;
+    background-image: url("https://th.bing.com/th/id/R.9478ee9836ff0a78b241b99ba30aaa72?rik=khZ%2bvW%2fwuGQOBA&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fda268f06e621b21.png&ehk=dEYs2jkBmKLTdT6nRtBB3Vs19%2bSIEMg0U8mGPHOSR7g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1");
+    background-size: cover;
+    animation: rock 1.33s infinite;
+}
+
+@keyframes rock {
+    0%{left: 550px;}
+    100%{left: -50px;}
+}
+
+.jump-animation {
+    animation: jump 0.5s;
+}
+
+@keyframes jump {
+    0%{top: 225px;}
+    50%{top: 75px;}
+    75%{top: 75px;}
+    100%{top: 225px;}
+}
