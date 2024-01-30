@@ -3,6 +3,7 @@ startButton.addEventListener("click", startGame);
 const dino = document.getElementById("dino");
 const rock = document.getElementById("rock");
 const score = document.getElementById("score");
+var intervalId; 
 
 function jump() {
   dino.classList.add("jump-animation");
@@ -18,7 +19,7 @@ document.addEventListener('keydown', (event) => {
 function startGame() {
   startButton.style.display = "none";
   score.style.display = "block";
-setInterval(() => {
+  intervalId =  setInterval(() => {
   const dinoTop = parseInt(window.getComputedStyle(dino)
     .getPropertyValue('top'));
   const rockLeft = parseInt(window.getComputedStyle(rock)
