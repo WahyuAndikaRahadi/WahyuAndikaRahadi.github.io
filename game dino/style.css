@@ -9,6 +9,24 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+.btn {
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    color: #fff;
+    background: rgb(65, 221, 65);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+  }
+  .bo {
+    align-items: center;
+    text-align: center;
+  }
+  
 
 #game {
     width: 600px;

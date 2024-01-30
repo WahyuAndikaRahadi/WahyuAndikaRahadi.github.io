@@ -1,3 +1,5 @@
+var startButton = document.getElementById("start");
+startButton.addEventListener("click", startGame);
 const dino = document.getElementById("dino");
 const rock = document.getElementById("rock");
 const score = document.getElementById("score");
@@ -13,7 +15,9 @@ document.addEventListener('keydown', (event) => {
     jump();
   }
 })
-
+function startGame() {
+  startButton.style.display = "none";
+  score.style.display = "block";
 setInterval(() => {
   const dinoTop = parseInt(window.getComputedStyle(dino)
     .getPropertyValue('top'));
@@ -33,3 +37,4 @@ setInterval(() => {
     location.reload();
   }
 }, 50);
+}
