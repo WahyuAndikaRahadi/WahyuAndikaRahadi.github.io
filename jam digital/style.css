@@ -70,12 +70,14 @@ body {
   font-weight: 300;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+
 }
 
 #time .ap {
   position: relative;
   font-size: 1rem;
   transform: translate(-20px);
+
 }
 
 .text {
@@ -83,7 +85,7 @@ body {
    color: rgb(226, 208, 208);
    position: absolute;
    top: 10rem;
-   font-size: 25px;
+   font-size: 35px;
 
 }
 .text:hover {
@@ -108,4 +110,33 @@ body {
   background: var(--color);
   border-radius: 50%;
   box-shadow: 0 0 20px var(--color), 0 0 60px var(--color  );
+}
+
+@media only screen and (max-width: 600px) {
+  .text {
+    font-size: 25px;
+  }
+  #time .ap {
+    position:absolute;
+    right: 20px;
+    bottom: 440px;
+  }
+  #time .circle {
+    width: 40%;
+    height: 40%;
+  }
+  #time .circle svg circle {
+    width: 10%;
+    height: 10%;
+  }
+  #time {
+    gap: 0;
+    font-size: 15px;
+  }
+  #time div {
+    font-size: 20px;
+  }
+  #time div span {
+    margin-right: 100px;
+  }
 }
