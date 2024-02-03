@@ -20,6 +20,8 @@ body {
 	background: var(--secondary);
 	font-family: 'Lato', sans-serif;
 	background-image: url('../img/everest.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .ui.grid + .grid {
 	margin-top: 0;
