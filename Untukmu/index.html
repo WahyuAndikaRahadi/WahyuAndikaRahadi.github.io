@@ -10,7 +10,6 @@
 		<!-- I must put the javascript here -->
 		<script src="js/jquery.js"></script>
 		<script src="js/timer.js"></script>
-	
 	<script src="js/functions.js"></script>
 	
 
@@ -25,6 +24,10 @@
 					Dear kamu yang aku kagumi dalam diam.
 					<br>
 					selama ini aku belum pernah menemukan orang sepertimu
+					<button id="playButton" onclick="playAudio()">Putar Musik</button>
+<audio loop id="myAudio">
+  <source  src="bersamu.mp3" type="audio/mp3">
+</audio>
 					</div> 
 				</div>
 			</header>
@@ -63,12 +66,25 @@
 					<span class="comments">$ Y <3</span><br>
 					<span class="comments">$ O <3</span><br>
 					<span class="comments">$ U <3</span><br>
-				</div></div></body>
+				</div></div>
+							
+	<script>
+function playAudio() {
+  var audio = document.getElementById("myAudio");
+  var playButton = document.getElementById("playButton");
+
+
+  audio.play();
+
+
+  playButton.style.display = "none";
+}
+
+		$('#code').typewriter();
+	</script>
+			</body>
 
 			
-				
-	<script>
-		$('#code').typewriter();
-	</script> <iframe width="0" height="0" src="https://api.soundcloud.com/tracks/309537176/stream?client_id=a3e059563d7fd3372b49b37f00a00bcf&auto_play=true" frameborder="0" allowfullscreen></iframe>
+ <iframe width="0" height="0" src="https://api.soundcloud.com/tracks/309537176/stream?client_id=a3e059563d7fd3372b49b37f00a00bcf&auto_play=true" frameborder="0" allowfullscreen></iframe>
 
 </html>
