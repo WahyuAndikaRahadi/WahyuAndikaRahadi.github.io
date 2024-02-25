@@ -119,7 +119,7 @@ body .player {
         min-height: 140px;
         max-height: 140px;
         display: -webkit-box;
-        display: flex;
+        display: absolute;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
         flex-direction: row;

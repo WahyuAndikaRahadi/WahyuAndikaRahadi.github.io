@@ -15,11 +15,17 @@ a {
   background-color: #148f77;
 }
 
-.medsos ul li {
+.medsos ul a {
   display: inline-block;
   color: white;
-  margin-right: 10px;
+  margin-right: 20px;
+
 }
+
+.medsos ul a:hover {
+  box-shadow: 0 0 2px 2px white;
+}
+
 .container {
   width: 80%;
   margin: 0 auto ;
