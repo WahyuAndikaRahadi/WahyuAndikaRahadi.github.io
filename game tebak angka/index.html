@@ -7,25 +7,27 @@
 <body>
     <h1>Permainan Tebak Angka</h1>
     <p>Saya memikirkan angka antara 1 dan 100. Cobalah tebak angka tersebut.</p>
+    <p id="messageWin"></p>
     <input type="number" id="guess" min="1" max="100">
     <button onclick="checkGuess()">Tebak</button>
-    <p id="message"></p>
+    <p id="messageLose"></p>
 
     <script>
         const secretNumber = Math.floor(Math.random() * 100) + 1;
         let attempts = 0;
-
+        
         function checkGuess() {
             const guess = parseInt(document.getElementById('guess').value);
             attempts++;
 
             if (guess === secretNumber) {
-                document.getElementById('message').innerHTML = `Selamat! Kamu menebak angka ${secretNumber} dengan ${attempts} percobaan.`;
+                document.getElementById('messageWin').innerHTML = `Selamat! Kamu menebak angka ${secretNumber} dengan ${attempts} percobaan🏆🏆🏆.`;
                 document.getElementById('guess').disabled = true;
+                document.getElementById('messageLose').innerHTML = ' '
             } else if (guess < secretNumber) {
-                document.getElementById('message').innerHTML = 'Tebakanmu terlalu rendah. Coba lagi.';
+                document.getElementById('messageLose').innerHTML = 'Tebakanmu terlalu rendah. Coba lagi.';
             } else {
-                document.getElementById('message').innerHTML = 'Tebakanmu terlalu tinggi. Coba lagi.';
+                document.getElementById('messageLose').innerHTML = 'Tebakanmu terlalu tinggi. Coba lagi.';
             }
         }
     </script>
