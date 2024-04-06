@@ -78,6 +78,76 @@ header ul li a {
   
   align-items: center;
 }
+.bar-top  {
+  width:100%;
+  height: 8px;
+  top:0;
+  left:0;
+  animation: progress-horizontal, progress-color;
+  position: fixed;
+  animation-timeline: scroll();
+  transform-origin: 0%;
+}
+.bar-bottom  {
+  width:100%;
+  height: 8px;
+  bottom:0;
+  left:0;
+  animation: progress-horizontal, progress-color;
+  position: fixed;
+  animation-timeline: scroll();
+  transform-origin: 100%;
+}
+.bar-left  {
+  width:8px;
+  height: 100%;
+  left: 0%;
+  bottom: 0;
+  animation: progress-vertical, progress-color;
+  position: fixed;
+  animation-timeline: scroll();
+  transform-origin: 0 100%;
+}
+.bar-right  {
+  width:8px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  animation: progress-vertical, progress-color;
+  position: fixed;
+  animation-timeline: scroll();
+  transform-origin: 0 0%;
+}
+
+@keyframes progress-horizontal {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes progress-vertical {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes progress-color {
+  0% {
+    background-color: tomato;
+  }
+  50% {
+    background-color: gold;
+  }
+  100% {
+    background-color: aqua;
+  }
+}
 
 .banner::after {
   content: '';
