@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat Kehidupan</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="container mx-auto h-screen">
+    <div class="flex flex-col justify-center items-center p-5 h-full border-2">
+      <h2 class="text-xl font-bold">Kami Mempersembahkan cheat Kehidupan😁😁</h2>
+      <h2 class="text-xl font-bold">Dengan Tools ini kalian dapat Mempermudah segala urusan Dunia Maupun akhirat.</h2>
+      <h2 class="text-xl font-bold">Selamat Mencoba.</h2>
+      <form id="myForm" class="flex flex-col my-5">
+        <div>
+          <input type="radio" id="pahala" name="choose" value="pahala">
+          <label for="pahala">🕌Pahala🕌</label>
+        </div>
+        <div>
+          <input type="radio" id="duit" name="choose" value="duit">
+          <label for="duit">🤑Duit Unlimited💵</label>
+        </div>
+        <div>
+          <input type="radio" name="choose" value="lambo">
+          <label for="lambo">🏎️Lambo🚗</label>
+        </div>
+        <div class="mb-5">
+          <input type="radio" name="choose" value="pejabat">
+          <label for="pejabat">👨‍💼Pejabat Negeri Odni Anti Korupsi😱</label>
+        </div>
+        <div class="my-5 hidden">
+          <progress id="prog" class="hidden w-full" value="0" max="100"></progress>
+          <div id="result" class="text-xl font-bold text-center">Hello</div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <button type="submit" class="w-full border bg-green-500 text-white rounded px-3 py-2">Submit</button>
+          <button type="reset" class="w-full border bg-red-500 text-white rounded px-3 py-2">Reset</button>
+        </div>
+      </form>
+      <footer>
+        Dibuat Oleh <a href="https://github.com/Wahyuandikarahadi" class="underline text-blue-500">Saya</a> Dengan ❤️
+      </footer>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      console.log("Ready")
+    })
+
+    $('#myForm').on('submit', function (event) {
+      event.preventDefault();
+
+      $("#result").text("");
+
+      let data = new FormData(event.target)
+      let result = [];
+
+      for (const pair of data.entries()) {
+        const [key, value] = pair
+        if (key === 'choose') {
+          let counter = 0
+          let progValue = $("#prog").val()
+          let interval = setInterval(addProgress, 1000);
+          function addProgress() {
+            if (counter == 12) {
+              clearInterval(interval)
+              result.push("<p>Sudahlah kawan tools ini tidak akan berguna.</p>");
+              switch (value) {
+                case "pejabat":
+                  result.push("<p>Mohon Maaf Cheat Ini Sudah Tidak Tersedia maaf Mungkin Karena Jaringan Saya 271ms😓❌</p>")
+                  $("#result").html(result.join('\n'))
+                  $("#prog").addClass('hidden')
+                  break;
+                case "pahala":
+                  let res = `
+                      <div class='text-left font-normal border-2 border-black px-6 py-2'>
+                      <p>Banyak hal yang sebenarnya dapat kita lakukan seperti : </p>
+                      <ul class='list-decimal'>
+                      <li>Mengaji dengan mengamalkannya</li>
+                      <li>Membantu orang tua dirumah</li>
+                      <li>Membersihkan rumah karena kebersihan adalah sebagian dari iman</li>
+                      </ul>
+                      <p class='text-xs my-3 text-center'>Keep chill and santuy broo 😎😎</p>
+                      </div>
+                  `;
+                  result.push(res)
+                  $("#result").html(result.join('\n'))
+                  $("#prog").addClass('hidden')
+                  break;
+                case "lambo":
+                  result.push("<p>Buka Vscode Mu Nyalakan Musik kesukaan mu 😂😎😎</p>")
+                  result.push("<p>Marilah Ngoding PHP karna adalah kunci mendapatkan lambo dengan warna kesukaan mu 😂😂</p>")
+                  $("#result").html(result.join('\n'))
+                  $("#prog").addClass('hidden')
+                  break;
+
+
+                case "duit":
+                  result.push("<p>Sudahlah Kawan Mari ambil cangkulmu kita bikin parit dan nimbun balok</p>")
+                  result.push("<p>daripada isi dompetlu pattimura nodongin Golok☠️😅</p>")
+                  $("#result").html(result.join('\n'))
+                  $("#prog").addClass('hidden')
+                  break;
+
+                default:
+                  alert("Wajib diisi YGY")
+                  break;
+
+              }
+
+            } else {
+              let value = counter * 10;
+              $("#prog").val(value);
+              counter += 2;
+            }
+
+            if (parseInt($("#prog").val()) < 20) {
+              $("#prog").parent().toggleClass('hidden')
+              $("#prog").toggleClass('hidden')
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
