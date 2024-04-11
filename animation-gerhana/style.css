@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: warnaLangit 10s linear infinite;
+  }
+  
+  .matahari {
+    width: 100px;
+    height: 100px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.5s, box-shadow 0.5s; /* Menambahkan transisi untuk efek halus */
+  }
+  
+  .bulan {
+    width: 100px;
+    height: 100px;
+    background-color: #808080;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2; /* Memastikan bulan selalu di depan */
+    animation: gerhana 10s infinite linear; /* Durasi diubah menjadi 10 detik untuk perjalanan bolak-balik */
+  }
+  
+  @keyframes gerhana {
+    0% {
+      transform: translateX(100vw); /* Mulai dari ujung kanan layar */
+    }
+    25%, 75% {
+      transform: translateX(0); /* Posisi di tengah saat dekat matahari */
+    }
+    50% {
+      /* Saat bulan tepat di depan matahari */
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100vw); /* Bergerak ke ujung kiri layar */
+    }
+  }
+  
+  @keyframes warnaGerhana {
+    0%, 100% {
+      background-color: #FFD700;
+      box-shadow: none;
+    }
+    50% {
+      background-color: #FF8C00; /* Warna saat gerhana */
+      box-shadow: 0 0 30px 10px rgba(255, 140, 0, 0.75); /* Bayangan lebih terang dan lebih besar */
+    }
+  }
+  @keyframes warnaLangit {
+      0%,100% {
+          background-color: #161414;
+      }
+      50% {
+          background-color: #c7c2c2;
+      }
+  }
+  
+  .matahari {
+    animation: warnaGerhana 10s infinite linear; /* Menyesuaikan durasi animasi dengan gerakan bulan */
+  }
+  
