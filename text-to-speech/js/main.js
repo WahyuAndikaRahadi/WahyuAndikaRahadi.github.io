@@ -10,7 +10,7 @@ btn.addEventListener("click", function () {
   } else {
     responsiveVoice.speak(
       textArea.value,
-
+      
       "Indonesian Male",
       {
         pitch: 1,
