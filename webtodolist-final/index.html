@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="app">
+        <h1>Daftar Tugas</h1>
+        <div class="subtitle">
+          Kelola tugas harianmu dengan mudah dan tetap produktif!
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="taskInput" placeholder="Tulis tugas..." />
+          <select id="taskCategoryInput">
+            <option value="Pribadi">Pribadi</option>
+            <option value="Sekolah">Sekolah</option>
+            <option value="Kerja">Kerja</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+          <button id="addBtn">Tambah</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterCategory">Filter:</label>
+          <select id="filterCategory">
+            <option value="Semua">Semua</option>
+            <option value="Pribadi">Pribadi</option>
+            <option value="Sekolah">Sekolah</option>
+            <option value="Kerja">Kerja</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+
+        <ul id="taskList"></ul>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
